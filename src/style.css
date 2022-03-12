@@ -1,0 +1,47 @@
+body {
+  font-family: ReithSans, Arial, Helvetica, freesans, sans-serif;
+}
+p1 {
+  color: rgb(34, 34, 34);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+}
+p2 {
+  color: rgb(34, 34, 34);
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.container {
+  width: 600px;
+}
+.today {
+  list-style: none;
+  padding-top: 16px;
+}
+
+.widget-wrapper {
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.icon-now {
+  font-size: 64px;
+  padding-left: 20px;
+}
+
+.temp-now {
+  color: rgb(34, 34, 34);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.vertical {
+  border-left: 2px solid black;
+  height: 70px;
+  position: absolute;
+  margin-top: 50px;
+  left: 30%;
+}
