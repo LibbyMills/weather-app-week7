@@ -22,17 +22,25 @@ function formatDate(timestamp) {
 }
 
 function displayData(response) {
+  console.log(response.data.weather[0].icon);
   let cityElement = document.querySelector("#city");
   let tempNowElement = document.querySelector("#tempNow");
   let tempTodayMin = document.querySelector("#tempTodayMin");
   let wxDescription = document.querySelector("#wxDescription");
   let dateElement = document.querySelector("#date");
+  let iconNow = document.querySelector("#icon-now");
+  let iconCode = response.data.weather[0].icon;
 
   tempNowElement.innerHTML = Math.round(response.data.main.temp);
   tempTodayMin.innerHTML = Math.round(response.data.main.temp_min);
   wxDescription.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = response.data.name;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconNow.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconCode}@2x.png`
+  );
+  iconNow.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "bd3ff741f58b13df62ca6260d9e2d474";
