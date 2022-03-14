@@ -22,7 +22,6 @@ function formatDate(timestamp) {
 }
 
 function displayData(response) {
-  console.log(response.data.weather[0].icon);
   let cityElement = document.querySelector("#city");
   let tempNowElement = document.querySelector("#tempNow");
   let tempTodayMin = document.querySelector("#tempTodayMin");
@@ -43,8 +42,17 @@ function displayData(response) {
   iconNow.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "bd3ff741f58b13df62ca6260d9e2d474";
-let city = "Portsmouth";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+function search(city) {
+  let apiKey = "bd3ff741f58b13df62ca6260d9e2d474";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayData);
+}
 
-axios.get(apiUrl).then(displayData);
+function processRequest(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", processRequest);
