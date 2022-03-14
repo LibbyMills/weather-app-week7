@@ -26,6 +26,7 @@ function displayData(response) {
   let tempNowElement = document.querySelector("#tempNow");
   let tempTodayMin = document.querySelector("#tempTodayMin");
   let wxDescription = document.querySelector("#wxDescription");
+  let wind = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconNow = document.querySelector("#icon-now");
   let iconCode = response.data.weather[0].icon;
@@ -35,6 +36,7 @@ function displayData(response) {
   tempNowElement.innerHTML = Math.round(response.data.main.temp);
   tempTodayMin.innerHTML = Math.round(response.data.main.temp_min);
   wxDescription.innerHTML = response.data.weather[0].description;
+  wind.innerHTML = Math.round(response.data.wind.speed);
   cityElement.innerHTML = response.data.name;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconNow.setAttribute(
