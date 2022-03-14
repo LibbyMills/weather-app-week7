@@ -30,6 +30,8 @@ function displayData(response) {
   let iconNow = document.querySelector("#icon-now");
   let iconCode = response.data.weather[0].icon;
 
+  celsiusTemp = Math.round(response.data.main.temp);
+
   tempNowElement.innerHTML = Math.round(response.data.main.temp);
   tempTodayMin.innerHTML = Math.round(response.data.main.temp_min);
   wxDescription.innerHTML = response.data.weather[0].description;
@@ -54,5 +56,30 @@ function processRequest(event) {
   search(cityInput.value);
 }
 
+function displayfahrenheit(event) {
+  event.preventDefault();
+  let fahrenheit = Math.round((celsiusTemp * 9) / 5 + 32);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let tempNowElement = document.querySelector("#tempNow");
+  tempNowElement.innerHTML = fahrenheit;
+}
+
+function displayCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let tempNowElement = document.querySelector("#tempNow");
+  tempNowElement.innerHTML = celsiusTemp;
+}
+
+let celsiusTemp = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", processRequest);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayfahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
