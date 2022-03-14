@@ -1,6 +1,8 @@
 body {
   font-family: ReithSans, Arial, Helvetica, freesans, sans-serif;
+  background-color: #f7f2ef;
 }
+
 p1 {
   color: rgb(34, 34, 34);
   font-size: 24px;
@@ -17,6 +19,12 @@ ul {
   margin: 0 auto;
   margin-top: 30px;
 }
+
+.card {
+  background-color: #f3e9de;
+  border-color: #a5835e;
+}
+
 .today {
   padding-top: 16px;
 }
@@ -26,9 +34,8 @@ ul {
   margin-left: 20px;
 }
 
-.icon-now {
-  font-size: 64px;
-  padding-left: 20px;
+.wxIcon {
+  margin-left: -20px;
 }
 
 .temp-now {
