@@ -94,6 +94,10 @@ ul {
 }
 
 .future-wx {
-  font-size: 32px;
-  margin-left: -5px;
+  margin-left: -15px;
+  margin-top: -10px;
+}
+
+.future-high {
+  font-weight: 600;
 }
