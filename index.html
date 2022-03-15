@@ -18,77 +18,63 @@
     <div class="container">
       <div class="card card-css">
         <div class="card-body">
-            <form id="search-form" class="mb-2">
-                <div class="row">
-                  <div class="col-9">
-                    <input type="search" 
-                     placeholder="Type a city..."
-                     class="form-control"
-                     id="city-input"
-                     autocomplete="off"/>
-                  </div>
-                  <div class="col-3">
-                    <input
-                     type="submit"
-                     value="Search"
-                     class="btn btn-primary"/>
-                  </div>
-               </div>
+          <form id="search-form" class="mb-2">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Type a city..."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input type="submit" value="Search" class="btn btn-primary" />
+              </div>
+            </div>
           </form>
           <div class="row">
             <p1>Today</p1>
             <p2 class="all-else" id="date">Mon 08:00</p2>
-            <div class="col-1 icon-now"><img 
-              id = "icon-now" 
-              src = "http://openweathermap.org/img/wn/10d@2x.png"
-              alt = "weather icon"
-              class = "wxIcon"
-            /></div>
+            <div class="col-1 icon-now">
+              <img
+                id="icon-now"
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather icon"
+                class="wxIcon"
+              />
+            </div>
             <div class="col-3 temp-now">
-             <ul class="today">
-              <li>
-               <strong>
-                 <span id="tempNow"></span>
-                </strong><small class="units unitStyle">
-                  <a href="#" id="celsius-link" class="active">˚C </a>|
-                  <a href="#" id="fahrenheit-link">˚F</a></small>
-              </li>
-              <li>
-                <span class="todayLow" id="tempTodayMin"></span>
-              </li>
-             </ul>
+              <ul class="today">
+                <li>
+                  <strong> <span id="tempNow"></span> </strong
+                  ><small class="units unitStyle">
+                    <a href="#" id="celsius-link" class="active">˚C </a>|
+                    <a href="#" id="fahrenheit-link">˚F</a></small
+                  >
+                </li>
+                <li>
+                  <span class="todayLow" id="tempTodayMin"></span>
+                </li>
+              </ul>
             </div>
             <div class="col-2 vertical"></div>
-            <div class="col-6 text"><span id="wxDescription"></span> in <em id="city"></em> today with <span id="wind"></span>km/h winds, and over the next few days...</div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <span class="day">Next Day</span>
-              <div class="row all-else">
-                <div class="col-2">
-                  <img 
-                    class="future-wx"
-                    src = "http://openweathermap.org/img/wn/10d@2x.png"
-                    alt = "weather icon"
-                    width = "60"
-                  />
-                </div>
-                <div class="col-8">
-                  <ul>
-                    <li>
-                      <span class="future-high">0˚</span>
-                    </li>
-                    <li>0˚</li>
-                  </ul>
-                </div>
-              </div>
+            <div class="col-6 text">
+              <span id="wxDescription"></span> in <em id="city"></em> today with
+              <span id="wind"></span>km/h winds, and over the next few days...
             </div>
+          </div>
+          <div id="future-forecast"></div>
+        </div>
       </div>
-      </div>
-      </div>
-      <small class="all-else">
-          <a href="https://github.com/LibbyMills" target="_blank">
-            Open source code,</a> by Libby Mills</small>
+    </div>
+    <small class="all-else">
+      <a href="https://github.com/LibbyMills" target="_blank">
+        Open source code,</a
+      >
+      by Libby Mills</small
+    >
     <script src="src/app.js"></script>
   </body>
 </html>

@@ -21,6 +21,40 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#future-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thurs", "Fri", "Sat", "Sun"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-3">
+            <span class="day">${day}</span>
+            <div class="row all-else">
+                    <div class="col-2">
+                        <img 
+                        class="future-wx"
+                        src = "http://openweathermap.org/img/wn/10d@2x.png"
+                        alt = "weather icon"
+                        width = "60"
+                        />
+                    </div>
+                    <div class="col-8">
+                        <ul>
+                        <li>
+                        <span class="future-high">11˚</span>
+                        </li>
+                        <li>0˚</li>
+                        </ul>
+                    </div>
+            </div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function displayData(response) {
   let cityElement = document.querySelector("#city");
   let tempNowElement = document.querySelector("#tempNow");
@@ -85,3 +119,5 @@ fahrenheitLink.addEventListener("click", displayfahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
+
+displayForecast();
