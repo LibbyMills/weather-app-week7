@@ -52,16 +52,6 @@ ul {
   top: -6px;
 }
 
-.unitStyle .active {
-  color: rgb(34, 34, 34);
-  cursor: default;
-  text-decoration: none;
-}
-
-.unitStyle .active:hover {
-  text-decoration: none;
-}
-
 .vertical {
   border-left: 1px solid black;
   height: 70px;
