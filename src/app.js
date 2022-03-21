@@ -102,6 +102,7 @@ function displayData(response) {
   iconNow.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
+  console.log(response.data);
 }
 
 function search(city) {
@@ -118,3 +119,5 @@ function processRequest(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", processRequest);
+
+search("Carlisle");
